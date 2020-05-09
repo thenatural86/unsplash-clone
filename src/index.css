@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Amiri|Dancing+Script|Quicksand&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -30,4 +31,16 @@ code {
   justify-content: space-between;
   font-family: "Quicksand", sans-serif;
   align-items: center;
+  padding: 10px 10%;
 }
+
+.hero {
+  background: lightcoral;
+}
+
+/* .navbar input[type='text'] {
+  width: 30em;
+  height: 2em;
+  border-radius: 15px;
+
+} */
