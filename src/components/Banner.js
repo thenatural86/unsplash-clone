@@ -9,9 +9,9 @@ export const Banner = () => {
   }
   // const picture = data.urls.regular
   return (
-    <div className="hero">
-      <h1>Unsplashed</h1>
-      <p>The internet's source of freely unable images.</p>
+    <div className="banner">
+      <h1>Black Lightning</h1>
+      <p>The internet's source of freely usable images.</p>
       <p>Powered by creatives everywhere.</p>
     </div>
   )

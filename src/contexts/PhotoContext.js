@@ -23,11 +23,8 @@ export const PhotoContextProvider = (props) => {
   const clientId = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
 
   const { data } = useFetch(
-    `https://api.unsplash.com/photos/?client_id=${clientId}`
+    `https://api.unsplash.com/photos/?client_id=${clientId}&per_page=10`
   )
-  // "http://api.unsplash.com/photos/random/?client_id=ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
-  // "https://api.randomuser.me/"
-  // console.log(data)
 
   return (
     <PhotoContext.Provider value={{ data }}>

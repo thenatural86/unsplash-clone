@@ -1,11 +1,17 @@
 import React from "react"
+import styled from "styled-components"
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
 
 export const Photo = ({ urls }) => {
-  console.log(urls.small)
   const photo = urls.small
   return (
     <div className="photo">
-      <img src={photo} alt="photo" />
+      <Img src={photo} alt="description" />
     </div>
   )
 }

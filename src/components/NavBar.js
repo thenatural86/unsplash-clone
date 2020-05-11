@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react"
-import { PhotoContext } from "../contexts/PhotoContext"
+import React, { useState } from "react"
+// import { PhotoContext } from "../contexts/PhotoContext"
 
 export const NavBar = () => {
-  const { data } = useContext(PhotoContext)
+  // const { data } = useContext(PhotoContext)
   // console.log(data)
 
   const [photo, setPhoto] = useState("")

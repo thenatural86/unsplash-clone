@@ -7,7 +7,6 @@ export const PhotoList = () => {
   if (data === null) {
     return <div>loading</div>
   }
-  console.log(data)
   const photos = data.map((photo) => {
     return <Photo key={photo.id} {...photo} />
   })
