@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Amiri|Dancing+Script|Quicksand&display=swap");
 
-/* * {
+* {
   margin: 0;
   padding: 0;
-} */
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

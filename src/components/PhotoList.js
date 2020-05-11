@@ -4,6 +4,8 @@ import { Photo } from "./Photo"
 
 export const PhotoList = () => {
   const { data } = useContext(PhotoContext)
+  console.log(data)
+
   if (data === null) {
     return <div>loading</div>
   }

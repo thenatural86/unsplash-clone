@@ -9,7 +9,6 @@ const useFetch = (url) => {
     async function fetchData() {
       const response = await fetch(url)
       const data = await response.json()
-
       setData(data)
       setLoading(false)
       // console.log(data)
@@ -21,7 +20,6 @@ const useFetch = (url) => {
 
 export const PhotoContextProvider = (props) => {
   const clientId = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
-
   const { data } = useFetch(
     `https://api.unsplash.com/photos/?client_id=${clientId}&per_page=10`
   )
@@ -32,3 +30,5 @@ export const PhotoContextProvider = (props) => {
     </PhotoContext.Provider>
   )
 }
+
+export default PhotoContextProvider
