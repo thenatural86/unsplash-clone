@@ -1,12 +1,11 @@
-import React, { useContext } from "react"
-import { PhotoContext } from "../contexts/PhotoContext"
+import React from "react"
 
 export const Banner = () => {
-  const { data } = useContext(PhotoContext)
+  // const { data } = useContext(PhotoContext)
   // console.log(data)
-  if (data === null) {
-    return <div>...loading</div>
-  }
+  // if (data === null) {
+  //   return <div>...loading</div>
+  // }
   // const picture = data.urls.regular
   return (
     <div className="banner">

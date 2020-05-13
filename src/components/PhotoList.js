@@ -1,16 +1,43 @@
-import React, { useContext } from "react"
-import { PhotoContext } from "../contexts/PhotoContext"
-import { Photo } from "./Photo"
+import React, { useState, useEffect } from "react"
+import { Image } from "./Image"
+import InfiniteScroll from "react-infinite-scroll-component"
+import { Loader } from "./Loader"
+import axios from "axios"
 
 export const PhotoList = () => {
-  const { data } = useContext(PhotoContext)
-  console.log(data)
+  const [images, setImages] = useState([])
 
-  if (data === null) {
-    return <div>loading</div>
+  useEffect(() => {
+    fetchImages()
+  }, [])
+
+  const fetchImages = () => {
+    const apiRoot = "https://api.unsplash.com"
+    const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
+
+    axios
+      // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
+      .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
+      .then((res) => setImages([...images, ...res.data]))
   }
-  const photos = data.map((photo) => {
-    return <Photo key={photo.id} {...photo} />
-  })
-  return <div className="photo-list">{photos}</div>
+
+  if (images === null) {
+    return <div>loaded</div>
+  }
+  return (
+    <InfiniteScroll
+      dataLength={images.length}
+      next={fetchImages}
+      hasMore={true}
+      loader={<Loader />}
+    >
+      {images.map((image) => {
+        return (
+          <div className="photo-list">
+            <Image key={image.id} url={image.urls.small} />
+          </div>
+        )
+      })}
+    </InfiniteScroll>
+  )
 }
