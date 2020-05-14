@@ -1,10 +1,6 @@
 import React, { useState } from "react"
-// import { PhotoContext } from "../contexts/PhotoContext"
 
 export const NavBar = () => {
-  // const { data } = useContext(PhotoContext)
-  // console.log(data)
-
   const [photo, setPhoto] = useState("")
   return (
     <div className="navbar">
