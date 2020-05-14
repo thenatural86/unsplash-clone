@@ -18,6 +18,11 @@ const WrapperImage = styled.div`
 
 export const ImageList = () => {
   const [images, setImages] = useState([])
+  const [modal, setModal] = useState(false)
+
+  const toggleModalState = () => {
+    console.log("toggling modal state")
+  }
 
   useEffect(() => {
     fetchImages()
@@ -28,8 +33,8 @@ export const ImageList = () => {
     const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
 
     axios
-      .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
-      // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
+      // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
+      .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
       .then((res) => setImages([...images, ...res.data]))
   }
 
@@ -47,7 +52,7 @@ export const ImageList = () => {
       >
         <WrapperImage>
           {images.map((image) => {
-            return <Image key={image.id} url={image} />
+            return <Image key={image.id} url={image} modal={toggleModalState} />
           })}
         </WrapperImage>
       </InfiniteScroll>
