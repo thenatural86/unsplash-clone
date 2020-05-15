@@ -12,10 +12,7 @@ function Modal() {
       <div className={`modalBackground modalShowing-${modalState}`}>
         <div className="modalInner">
           <div className="modalImage">
-            <img
-              src="https://images.unsplash.com/photo-1586984478679-9f1ae1573ae3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-              alt="street"
-            />
+            <img src="" alt="street" />
           </div>
           <div className="modalText">
             <h2>Modal header</h2>
@@ -35,7 +32,7 @@ function Modal() {
           </div>
         </div>
       </div>
-      <button onClick={() => toggleModalState()}>Open Modal</button>
+      <button onClick={() => toggleModalState()}>Here I am!</button>
     </div>
   )
 }

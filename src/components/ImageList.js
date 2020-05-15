@@ -3,6 +3,7 @@ import { Image } from "./Image"
 import InfiniteScroll from "react-infinite-scroll-component"
 import { Loader } from "./Loader"
 import axios from "axios"
+import Modal from "./Modal"
 
 import styled from "styled-components"
 
@@ -20,8 +21,9 @@ export const ImageList = () => {
   const [images, setImages] = useState([])
   const [modal, setModal] = useState(false)
 
-  const toggleModalState = () => {
-    console.log("toggling modal state")
+  const toggleConsole = (image) => {
+    setModal(!modal)
+    console.log("toggling modal state", image, modal)
   }
 
   useEffect(() => {
@@ -43,6 +45,10 @@ export const ImageList = () => {
   }
   return (
     <div>
+      <Modal
+        modal={toggleConsole}
+        className={`modalBackground modalShowing-${modal}`}
+      />
       <InfiniteScroll
         className="scroll-component"
         dataLength={images.length}
@@ -52,7 +58,7 @@ export const ImageList = () => {
       >
         <WrapperImage>
           {images.map((image) => {
-            return <Image key={image.id} url={image} modal={toggleModalState} />
+            return <Image key={image.id} url={image} modal={toggleConsole} />
           })}
         </WrapperImage>
       </InfiniteScroll>

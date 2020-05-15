@@ -13,16 +13,15 @@ export const Image = (props) => {
   const image = props.url.urls.small
   // console.log(props)
   const id = props.url.id
-  const description = props.url.id.alt_description
-
-  const handleClick = (id, description) => {
-    console.log("clicked", id)
-    return <Modal />
-  }
+  const imageObj = props.url
 
   return (
     <div>
-      <Img src={image} alt="description" onClick={() => props.modal(id)} />
+      <Img
+        src={image}
+        alt="description"
+        onClick={() => props.modal(imageObj)}
+      />
     </div>
   )
 }
