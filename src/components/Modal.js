@@ -1,7 +1,7 @@
 import React from "react"
 
 function Modal(props) {
-  console.log(props.image.urls)
+  // console.log(props.image.urls)
   if (props.image.urls === undefined) {
     return null
   }
@@ -13,7 +13,7 @@ function Modal(props) {
       >
         <div className="modalInner">
           <div className="modalImage">
-            <img src={props.image.urls.small} alt="street" />
+            <img src={props.image.urls.regular} alt="street" />
           </div>
           <div className="modalText">
             <h2>Modal header</h2>

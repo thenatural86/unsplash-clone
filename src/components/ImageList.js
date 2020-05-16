@@ -35,7 +35,6 @@ export const ImageList = () => {
   const fetchImages = () => {
     const apiRoot = "https://api.unsplash.com"
     const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
-
     axios
       // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
       .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
