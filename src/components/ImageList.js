@@ -20,9 +20,11 @@ const WrapperImage = styled.div`
 export const ImageList = () => {
   const [images, setImages] = useState([])
   const [modal, setModal] = useState(false)
+  const [image, setImage] = useState({})
 
-  const toggleConsole = (image) => {
+  const toggleModalState = (image) => {
     setModal(!modal)
+    setImage(image)
     console.log("toggling modal state", image, modal)
   }
 
@@ -35,20 +37,24 @@ export const ImageList = () => {
     const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
 
     axios
-      // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=10`)
+      // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
       .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
       .then((res) => setImages([...images, ...res.data]))
   }
 
   if (images === null) {
-    return <div>loaded</div>
+    return <div>loading</div>
   }
   return (
     <div>
-      <Modal
-        modal={toggleConsole}
-        className={`modalBackground modalShowing-${modal}`}
-      />
+      <div className={`modalBackground modalShowing-${modal}`}>
+        <Modal
+          toggleModalState={toggleModalState}
+          modal={modal}
+          image={image}
+        />
+      </div>
+
       <InfiniteScroll
         className="scroll-component"
         dataLength={images.length}
@@ -58,7 +64,13 @@ export const ImageList = () => {
       >
         <WrapperImage>
           {images.map((image) => {
-            return <Image key={image.id} url={image} modal={toggleConsole} />
+            return (
+              <Image
+                key={image.id}
+                url={image}
+                toggleModalState={toggleModalState}
+              />
+            )
           })}
         </WrapperImage>
       </InfiniteScroll>

@@ -1,38 +1,26 @@
-import React, { useState } from "react"
+import React from "react"
 
-function Modal() {
-  const [modalState, setModalState] = useState(false)
-
-  const toggleModalState = () => {
-    setModalState(!modalState)
+function Modal(props) {
+  console.log(props.image.urls)
+  if (props.image.urls === undefined) {
+    return null
   }
-
   return (
-    <div className="Modal">
-      <div className={`modalBackground modalShowing-${modalState}`}>
+    <div className="modal">
+      <div
+        onClick={props.toggleModalState}
+        className={`modalBackground modalShowing-${props.modal}`}
+      >
         <div className="modalInner">
           <div className="modalImage">
-            <img src="" alt="street" />
+            <img src={props.image.urls.small} alt="street" />
           </div>
           <div className="modalText">
             <h2>Modal header</h2>
-            <p>
-              Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
-              IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
-              IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem IpsumLorem IpsumLorem
-              IpsumLorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem
-              IpsumLorem IpsumLorem Ipsum
-            </p>
-            <form action="">
-              <button>Join Now!</button>
-            </form>
-            <button className="exitButton" onClick={() => toggleModalState()}>
-              exit
-            </button>
+            <p></p>
           </div>
         </div>
       </div>
-      <button onClick={() => toggleModalState()}>Here I am!</button>
     </div>
   )
 }

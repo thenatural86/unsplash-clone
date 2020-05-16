@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-import Modal from "./Modal"
-
 const Img = styled.img`
   width: 100%;
   height: 100%;
@@ -10,9 +8,8 @@ const Img = styled.img`
 `
 
 export const Image = (props) => {
-  const image = props.url.urls.small
   // console.log(props)
-  const id = props.url.id
+  const image = props.url.urls.small
   const imageObj = props.url
 
   return (
@@ -20,7 +17,7 @@ export const Image = (props) => {
       <Img
         src={image}
         alt="description"
-        onClick={() => props.modal(imageObj)}
+        onClick={() => props.toggleModalState(imageObj)}
       />
     </div>
   )
