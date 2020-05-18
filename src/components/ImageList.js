@@ -14,7 +14,6 @@ const WrapperImage = styled.div`
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 300px;
-  ${"" /* background-color: orange; */}
 `
 
 export const ImageList = () => {
@@ -27,11 +26,9 @@ export const ImageList = () => {
     setImage(image)
     console.log("toggling modal state", image, modal)
   }
-
   useEffect(() => {
     fetchImages()
   }, [])
-
   const fetchImages = () => {
     const apiRoot = "https://api.unsplash.com"
     const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
@@ -40,7 +37,6 @@ export const ImageList = () => {
       .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
       .then((res) => setImages([...images, ...res.data]))
   }
-
   if (images === null) {
     return <div>loading</div>
   }
@@ -53,7 +49,6 @@ export const ImageList = () => {
           image={image}
         />
       </div>
-
       <InfiniteScroll
         className="scroll-component"
         dataLength={images.length}
