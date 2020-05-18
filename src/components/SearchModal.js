@@ -1,6 +1,6 @@
 import React from "react"
 
-function Modal(props) {
+function SearchModal(props) {
   console.log(props.image.urls)
   if (props.image.urls === undefined) {
     return null
@@ -9,11 +9,11 @@ function Modal(props) {
     <div className="modal">
       <div
         onClick={props.toggleModalState}
-        className={`modalBackground modalShowing-${props.modal}`}
+        className={`searchModalBackground modalShowing-${props.modal}`}
       >
-        <div className="modalInner">
-          <div className="modalImage">
-            <img src={props.image.urls.regular} alt="street" />
+        <div className="searchModalInner">
+          <div>
+            <img src={props.image.urls.small} alt="street" />
           </div>
           <div className="modalText">
             <h2>Modal header</h2>
@@ -25,4 +25,4 @@ function Modal(props) {
   )
 }
 
-export default Modal
+export default SearchModal
