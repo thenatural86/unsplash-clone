@@ -1,10 +1,7 @@
 import React from "react"
 
 function SearchModal(props) {
-  console.log(props.image.urls)
-  if (props.image.urls === undefined) {
-    return null
-  }
+  console.log(props)
   return (
     <div className="modal">
       <div
