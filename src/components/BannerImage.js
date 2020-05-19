@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Img = styled.img`
-  height: 100%;
+  height: 35rem;
   width: 100%;
   background-color: pink;
   object-fit: cover;

@@ -24,6 +24,7 @@ const H1 = styled.h1`
   left: 0;
   right: 0;
   top: 40%;
+  color: white;
 `
 const P = styled.p`
   font-family: "Quicksand", sans-serif;
@@ -33,27 +34,48 @@ const P = styled.p`
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 60%;
+  color: white;
+`
+const P2 = styled.p`
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 1em;
+  z-index: 50;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 70%;
+  color: white;
+`
+const Input = styled.input`
+  margin-bottom: 1em;
+  z-index: 50;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 80%;
 `
 
 export const Banner = () => {
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetchImages()
+    // fetchImages()
   }, [])
 
-  const fetchImages = () => {
-    const apiRoot = "https://api.unsplash.com"
-    const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
-    axios
-      .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
-      // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
-      .then((res) => {
-        setLoading(false)
-        setImages([...images, ...res.data])
-      })
-  }
+  // const fetchImages = () => {
+  //   const apiRoot = "https://api.unsplash.com"
+  //   const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
+  //   axios
+  //     .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
+  //     // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
+  //     .then((res) => {
+  //       setLoading(false)
+  //       setImages([...images, ...res.data])
+  //     })
+  // }
 
   return (
     <div>
@@ -66,7 +88,8 @@ export const Banner = () => {
               {/* <BannerImage image={image} /> */}
               <H1>Black Lightning</H1>
               <P>The internet's source of freely usable images.</P>
-              {/* <P>Powered by creatives everywhere.</P> */}
+              <P2>Powered by creatives everywhere.</P2>
+              <Input />
             </Header>
           )
         })}
