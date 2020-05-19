@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 // import axios from "axios"
 // import Modal from "./Modal"
+import black from "../images/black.png"
 
 export const NavBar = (props) => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -13,7 +14,7 @@ export const NavBar = (props) => {
 
   return (
     <div className="navbar">
-      <h1>Logo</h1>
+      <img src={black} style={{ height: "2rem" }} />
       <form onSubmit={handleSubmit}>
         <input
           type="text"

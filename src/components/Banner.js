@@ -62,20 +62,20 @@ export const Banner = () => {
   const [images, setImages] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    // fetchImages()
+    fetchImages()
   }, [])
 
-  // const fetchImages = () => {
-  //   const apiRoot = "https://api.unsplash.com"
-  //   const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
-  //   axios
-  //     .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
-  //     // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
-  //     .then((res) => {
-  //       setLoading(false)
-  //       setImages([...images, ...res.data])
-  //     })
-  // }
+  const fetchImages = () => {
+    const apiRoot = "https://api.unsplash.com"
+    const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
+    axios
+      .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=1`)
+      // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
+      .then((res) => {
+        setLoading(false)
+        setImages([...images, ...res.data])
+      })
+  }
 
   return (
     <div>
@@ -85,7 +85,7 @@ export const Banner = () => {
         images.map((image) => {
           return (
             <Header>
-              {/* <BannerImage image={image} /> */}
+              <BannerImage image={image} />
               <H1>Black Lightning</H1>
               <P>The internet's source of freely usable images.</P>
               <P2>Powered by creatives everywhere.</P2>

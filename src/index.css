@@ -30,16 +30,20 @@ code {
 .navbar {
   background: lightblue;
   display: flex;
-  justify-content: space-between;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  justify-content: space-around;
   font-family: "Quicksand", sans-serif;
   align-items: center;
-  padding: 10px 10%;
+  padding: 10px 0;
+  /* margin: auto 2px; */
 }
 
 .navbar input[type='text'] {
-  width: 30em;
-  height: 2em;
-  border-radius: 15px;
+  width: 90em;
+  height: 4em;
+  border-radius: 20px;
+  /* margin-left: 1rem; */
 }
 
 /* *********************************************************Modal*********************************************************************************** */
