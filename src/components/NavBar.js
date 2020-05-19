@@ -20,7 +20,7 @@ export const NavBar = (props) => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search free hi-resolution images"
+          placeholder="Search free hi-resolution photos"
         />
         {/* <input type="submit" value="submit" /> */}
       </form>

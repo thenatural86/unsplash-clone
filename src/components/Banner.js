@@ -22,29 +22,29 @@ const H1 = styled.h1`
   position: absolute;
   margin: 0 auto;
   left: 0;
-  right: 0;
+  right: 44.5%;
   top: 40%;
   color: white;
 `
-const P = styled.p`
+const H3 = styled.h3`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
   z-index: 50;
   position: absolute;
   margin: 0 auto;
   left: 0;
-  right: 0;
+  right: 33%;
   top: 60%;
   color: white;
 `
-const P2 = styled.p`
+const H32 = styled.h3`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
   z-index: 50;
   position: absolute;
   margin: 0 auto;
   left: 0;
-  right: 0;
+  right: 39.5%;
   top: 70%;
   color: white;
 `
@@ -55,7 +55,10 @@ const Input = styled.input`
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 80%;
+  top: 85%;
+  height: 3rem;
+  width: 60%;
+  border-radius: 5px;
 `
 
 export const Banner = () => {
@@ -78,7 +81,7 @@ export const Banner = () => {
   }
 
   return (
-    <div>
+    <div className="banner">
       {loading && <p>its loading</p>}
 
       {!loading &&
@@ -87,9 +90,9 @@ export const Banner = () => {
             <Header>
               <BannerImage image={image} />
               <H1>Black Lightning</H1>
-              <P>The internet's source of freely usable images.</P>
-              <P2>Powered by creatives everywhere.</P2>
-              <Input />
+              <H3>The internet's source of freely usable images.</H3>
+              <H32>Powered by creatives everywhere.</H32>
+              <Input placeholder="Search free high-resolution photos" />
             </Header>
           )
         })}
