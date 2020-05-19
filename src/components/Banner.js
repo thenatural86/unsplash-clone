@@ -4,14 +4,36 @@ import axios from "axios"
 import { BannerImage } from "./BannerImage"
 
 const Header = styled.div`
-  max-width: 70rem;
+  ${"" /* max-width: 70rem; */}
+  width: 100%;
+  height: 20rem;
   margin: 2rem auto;
   text-align: center;
+  background-color: blue;
+  position: relative;
+  display: inline-block;
+  background-color: orange;
 `
 
 const H1 = styled.h1`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
+  z-index: 50;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+`
+const P = styled.p`
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 1em;
+  z-index: 50;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
 `
 
 export const Banner = () => {
@@ -41,10 +63,10 @@ export const Banner = () => {
         images.map((image) => {
           return (
             <Header>
-              <BannerImage image={image} />
+              {/* <BannerImage image={image} /> */}
               <H1>Black Lightning</H1>
-              <p>The internet's source of freely usable images.</p>
-              <p>Powered by creatives everywhere.</p>
+              <P>The internet's source of freely usable images.</P>
+              {/* <P>Powered by creatives everywhere.</P> */}
             </Header>
           )
         })}
