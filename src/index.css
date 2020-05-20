@@ -22,13 +22,13 @@ code {
 
 /* ************************************************************************************************************************************************/
 .App {
-  background: rgb(245, 242, 219);
+  /* background: rgb(245, 242, 219); */
 
 }
 
 /* *****************************************************************NavBar*********************************************************************** */
 .navbar {
-  background: lightblue;
+  background: #fff;
   display: flex;
   /* flex-direction: row; */
   /* justify-content: flex-start; */
@@ -37,6 +37,9 @@ code {
   align-items: center;
   padding: 10px 0;
   /* margin: auto 2px; */
+  position: fixed;
+  z-index: 51;
+  width: 100%;
 }
 
 .navbar input[type='text'] {
@@ -48,9 +51,6 @@ code {
 
 /* ***********************************************************    Banner   ********************************************************************** */
 
-.banner {
-  border: 5px solid yellow;
-}
 
 
 /* *********************************************************Modal*********************************************************************************** */
@@ -60,6 +60,9 @@ code {
   justify-content: center;
   width: 100%;
   height: 100%;
+  position: fixed;
+  top: 8%;
+  z-index: 51;
 }
 
 .modalBackground {
@@ -71,55 +74,28 @@ code {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  z-index: 2;
-}
-
-.searchModalBackground {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
-  /* position: absolute; */
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  z-index: 2;
+  /* display: flex; */
+  z-index: 51;
 }
 
 .modalInner {
-  background-color: white;
-  border: 2px solid red;
+  background-color: #fff;
   border-radius: 5px;
-  width: 85%;
-  height: 92%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-
+  z-index: 51;
+  width: 80rem;
+  height: 60rem;
 }
 
-.searchModalInner {
-  /* background-color: white; */
-  /* border: 2px solid red; */
-  /* border-radius: 5px; */
-  /* width: 85%; */
-  /* height: 92%; */
-  /* margin: auto; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-
-
+.modalInner img {
+  max-width: 80%;
+  max-height: 70%;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 50px auto;
 }
 
 .modalShowing-true {
@@ -142,14 +118,41 @@ code {
   text-align: center;
 }
 
-.modalImage img {
-  width: 70%;
-  /* object-fit: cover; */
-  /* height: 40rem; */
-  /* justify-content: center; */
-  align-items: center;
-  justify-content: center;
+
+
+
+/* *************************************   Search Modal ***************************************************************** */
+
+.searchModalBackground {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  z-index: 2;
 }
+
+
+.searchModalInner {
+  /* background-color: white; */
+  /* border: 2px solid red; */
+  /* border-radius: 5px; */
+  /* width: 85%; */
+  /* height: 92%; */
+  /* margin: auto; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+
 
 
 @media (max-width: 500px) {

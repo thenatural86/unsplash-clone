@@ -9,10 +9,8 @@ const Header = styled.div`
   height: 20rem;
   margin: 2rem auto;
   text-align: center;
-  background-color: blue;
   position: relative;
   display: inline-block;
-  background-color: orange;
 `
 
 const H1 = styled.h1`
@@ -50,7 +48,7 @@ const H32 = styled.h3`
 `
 const Input = styled.input`
   margin-bottom: 1em;
-  z-index: 50;
+  ${"" /* z-index: 49; */}
   position: absolute;
   margin: 0 auto;
   left: 0;

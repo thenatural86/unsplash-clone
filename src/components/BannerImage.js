@@ -4,7 +4,6 @@ import styled from "styled-components"
 const Img = styled.img`
   height: 35rem;
   width: 100%;
-  background-color: pink;
   object-fit: cover;
 `
 export const BannerImage = (props) => {
