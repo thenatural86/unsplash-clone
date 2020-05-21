@@ -16,25 +16,24 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   const handleSubmit = (searchTerm) => {
+    console.log(searchTerm)
     const url = `https://api.unsplash.com/search/photos?page=1&query=${searchTerm}&client_id=${clientId}`
-    // e.preventDefault()
     axios.get(url).then((resp) => {
+      console.log(resp.data)
       setResults(resp.data.results)
       setClientId()
       setLoading(false)
       setModal(!modal)
     })
-    setSearchTerm("")
+    setSearchTerm(searchTerm)
+    // console.log("2nd submit")
   }
 
   const toggleModalState = (image) => {
     setModal(!modal)
     console.log("toggling modal state", image, modal)
   }
-
-  console.log(results, modal)
-  // if results.length is 0 return nothing, otherwise return search modal
-
+  console.log("loading:", loading, "modal:", modal, "results:", results)
   return (
     <div className="App">
       <NavBar handleSubmit={handleSubmit} />
@@ -47,6 +46,7 @@ function App() {
               toggleModalState={toggleModalState}
               modal={modal}
               image={image}
+              searchTerm={searchTerm}
             />
           )
         })}
@@ -55,12 +55,4 @@ function App() {
   )
 }
 
-// results.map((image) => {})
-
 export default App
-
-// {
-//   results.map((image) => {
-//     return <div className={` modalShowing-${modal}`} key={image.id}></div>
-//   })
-// }

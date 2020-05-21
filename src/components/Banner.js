@@ -48,7 +48,7 @@ const H32 = styled.h3`
 `
 const Input = styled.input`
   margin-bottom: 1em;
-  ${"" /* z-index: 49; */}
+  z-index: 49;
   position: absolute;
   margin: 0 auto;
   left: 0;

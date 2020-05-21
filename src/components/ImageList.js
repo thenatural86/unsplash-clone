@@ -33,8 +33,8 @@ export const ImageList = () => {
     const apiRoot = "https://api.unsplash.com"
     const accessKey = "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
     axios
-      .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=30`)
-      // .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
+      // .get(`${apiRoot}/photos/random?client_id=${accessKey}&count=30`)
+      .get(`${apiRoot}/photos/?client_id=${accessKey}&count=10`)
       .then((res) => setImages([...images, ...res.data]))
   }
   if (images === null) {

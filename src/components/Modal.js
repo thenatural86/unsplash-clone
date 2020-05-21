@@ -12,12 +12,12 @@ function Modal(props) {
         className={`modalBackground modalShowing-${props.modal}`}
       >
         <div className="modalInner">
-          {/* <div className="modalImage"> */}
-          <img src={props.image.urls.regular} alt="street" />
+          <div className="modalImage">
+            <img src={props.image.urls.regular} alt="street" />
+          </div>
         </div>
-        {/* </div> */}
         <div className="modalText">
-          {/* <h2>Modal header</h2> */}
+          <h2>Modal header</h2>
           <p></p>
         </div>
       </div>

@@ -1,20 +1,20 @@
 import React, { useState } from "react"
-// import axios from "axios"
-// import Modal from "./Modal"
 import black from "../images/black.png"
 
 export const NavBar = (props) => {
+  // console.log(props)
   const [searchTerm, setSearchTerm] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // console.log("1st submit")
     props.handleSubmit(searchTerm)
     setSearchTerm("")
   }
 
   return (
     <div className="navbar">
-      <img src={black} style={{ height: "2rem" }} />
+      <img src={black} alt="black lightning 50/50" style={{ height: "2rem" }} />
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -22,7 +22,6 @@ export const NavBar = (props) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search free hi-resolution photos"
         />
-        {/* <input type="submit" value="submit" /> */}
       </form>
       <p>Home</p>
       <p>Collections</p>
