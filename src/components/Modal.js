@@ -1,7 +1,7 @@
 import React from "react"
 
 function Modal(props) {
-  console.log(props.image.urls)
+  // console.log(props.image.urls)
   if (props.image.urls === undefined) {
     return null
   }

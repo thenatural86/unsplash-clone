@@ -85,7 +85,7 @@ export const Banner = () => {
       {!loading &&
         images.map((image) => {
           return (
-            <Header>
+            <Header key={image.id}>
               <BannerImage image={image} />
               <H1>Black Lightning</H1>
               <H3>The internet's source of freely usable images.</H3>

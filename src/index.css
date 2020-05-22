@@ -23,7 +23,6 @@ code {
 /* ************************************************************************************************************************************************/
 .App {
   /* background: rgb(245, 242, 219); */
-
 }
 
 /* *****************************************************************NavBar*********************************************************************** */
@@ -42,7 +41,7 @@ code {
   width: 90rem;
 }
 
-.navbar input[type='text'] {
+.navbar input[type="text"] {
   width: 70rem;
   height: 4em;
   border-radius: 20px;
@@ -50,8 +49,6 @@ code {
 }
 
 /* ***********************************************************    Banner   ********************************************************************** */
-
-
 
 /* *********************************************************Modal*********************************************************************************** */
 
@@ -119,6 +116,7 @@ code {
   z-index: 51;
   width: 80rem;
   height: 60rem;
+  display: flex;
 }
 
 .modalInner img {
@@ -132,7 +130,7 @@ code {
 }
 
 .search-modal-inner img {
-  max-width: 80%;
+  max-width: 20%;
   max-height: 70%;
   object-fit: contain;
   align-items: center;
@@ -150,7 +148,6 @@ code {
   opacity: 1;
   pointer-events: visible;
 }
-
 
 .modalText {
   padding: 15px;
@@ -180,9 +177,6 @@ code {
   text-align: center;
 }
 
-
-
-
 /* *************************************   Search Modal ***************************************************************** */
 
 .searchModalBackground {
@@ -201,7 +195,6 @@ code {
   z-index: 2;
 }
 
-
 .searchModalInner {
   background-color: white;
   border: 2px solid red;
@@ -213,9 +206,6 @@ code {
   flex-direction: column;
   justify-content: center;
 }
-
-
-
 
 @media (max-width: 500px) {
   .modalImage {

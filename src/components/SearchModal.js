@@ -1,7 +1,7 @@
 import React from "react"
 
 function SearchModal(props) {
-  console.log(props)
+  console.log(props.image.urls.small)
   return (
     <div className="search-modal">
       <div
@@ -13,7 +13,7 @@ function SearchModal(props) {
             <img src={props.image.urls.small} alt="street" />
           </div>
           <div className="search-modal-text">
-            <h2>Modal header</h2>
+            {/* <h2>Modal header</h2> */}
             <p></p>
           </div>
         </div>

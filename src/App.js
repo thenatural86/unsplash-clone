@@ -16,10 +16,10 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   const handleSubmit = (searchTerm) => {
-    console.log(searchTerm)
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${searchTerm}&client_id=${clientId}`
+    // console.log(searchTerm)
+    const url = `https://api.unsplash.com/search/photos?page=10&query=${searchTerm}&client_id=${clientId}`
     axios.get(url).then((resp) => {
-      console.log(resp.data)
+      // console.log(resp.data)
       setResults(resp.data.results)
       setClientId()
       setLoading(false)
@@ -31,9 +31,9 @@ function App() {
 
   const toggleModalState = (image) => {
     setModal(!modal)
-    console.log("toggling modal state", image, modal)
+    // console.log("toggling modal state", image, modal)
   }
-  console.log("loading:", loading, "modal:", modal, "results:", results)
+  // console.log("loading:", loading, "modal:", modal, "results:", results)
   return (
     <div className="App">
       <NavBar handleSubmit={handleSubmit} />
@@ -43,6 +43,7 @@ function App() {
         results.map((image) => {
           return (
             <SearchModal
+              key={image.id}
               toggleModalState={toggleModalState}
               modal={modal}
               image={image}
