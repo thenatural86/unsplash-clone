@@ -16,24 +16,20 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   const handleSubmit = (searchTerm) => {
-    // console.log(searchTerm)
     const url = `https://api.unsplash.com/search/photos?page=10&query=${searchTerm}&client_id=${clientId}`
     axios.get(url).then((resp) => {
-      // console.log(resp.data)
       setResults(resp.data.results)
       setClientId()
       setLoading(false)
       setModal(!modal)
     })
     setSearchTerm(searchTerm)
-    // console.log("2nd submit")
   }
 
   const toggleModalState = (image) => {
     setModal(!modal)
-    // console.log("toggling modal state", image, modal)
   }
-  // console.log("loading:", loading, "modal:", modal, "results:", results)
+
   return (
     <div className="App">
       <NavBar handleSubmit={handleSubmit} />

@@ -8,12 +8,16 @@ import Modal from "./Modal"
 import styled from "styled-components"
 
 const WrapperImage = styled.div`
-  max-width: 70rem;
+  max-width: 80rem;
   margin: 4rem auto;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 300px;
+  ${"" /* display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 300px; */}
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `
 
 export const ImageList = () => {
