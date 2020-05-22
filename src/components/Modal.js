@@ -1,7 +1,7 @@
 import React from "react"
 
 function Modal(props) {
-  // console.log(props.image.urls)
+  console.log(props.image)
   if (props.image.urls === undefined) {
     return null
   }
@@ -12,13 +12,17 @@ function Modal(props) {
         className={`modalBackground modalShowing-${props.modal}`}
       >
         <div className="modalInner">
+          <div>
+            <img src={props.image.user.profile_image.small} />
+          </div>
+          <div>{props.image.user.name}</div>
           <div className="modalImage">
             <img src={props.image.urls.regular} alt="street" />
           </div>
-        </div>
-        <div className="modalText">
-          <h2>Modal header</h2>
-          <p></p>
+          <div className="modal-description">
+            <h2>{props.image.alt_description}</h2>
+            <p></p>
+          </div>
         </div>
       </div>
     </div>

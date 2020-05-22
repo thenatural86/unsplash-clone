@@ -24,8 +24,8 @@ export const NavBar = (props) => {
         />
       </form>
       <p>Home</p>
-      <p>Collections</p>
-      <p>About</p>
+      <p>My Lightning</p>
+      <p>Login</p>
     </div>
   )
 }

@@ -62,15 +62,6 @@ code {
   z-index: 51;
 }
 
-.search-modal {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  top: 8%;
-  z-index: 51;
-}
-
 .modalBackground {
   opacity: 0;
   pointer-events: none;
@@ -84,6 +75,64 @@ code {
   z-index: 51;
 }
 
+.modalInner {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: auto;
+  z-index: 51;
+  width: 75rem;
+  height: 100%;
+  overflow: scroll;
+}
+
+.modalInner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 50px auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 3px solid orange;
+
+}
+
+.modalImage {
+  height: 80%;
+  width: 100%;
+}
+
+.modalShowing-true {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal-description {
+  padding: 15px;
+}
+
+.modalText p {
+  line-height: 180%;
+}
+
+.modalText button {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* *************************************************************   Search Modal ***************************************************************** */
+.search-modal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  top: 8%;
+  z-index: 51;
+}
+
 .search-modal-background {
   opacity: 0;
   pointer-events: none;
@@ -93,20 +142,11 @@ code {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(19, 18, 18, 0.7);
   display: flex;
   /* z-index: 51; */
   border: 5px solid palegreen;
   /* background-color: peachpuff; */
-}
-
-.modalInner {
-  background-color: #fff;
-  border-radius: 5px;
-  margin: auto;
-  z-index: 51;
-  width: 80rem;
-  height: 60rem;
 }
 
 .search-modal-inner {
@@ -119,16 +159,6 @@ code {
   display: flex;
 }
 
-.modalInner img {
-  max-width: 80%;
-  max-height: 70%;
-  object-fit: contain;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 50px auto;
-}
-
 .search-modal-inner img {
   max-width: 20%;
   max-height: 70%;
@@ -139,36 +169,17 @@ code {
   padding: 50px auto;
 }
 
-.modalShowing-true {
-  opacity: 1;
-  pointer-events: visible;
-}
-
 .search-modal-showing-true {
   opacity: 1;
   pointer-events: visible;
-}
-
-.modalText {
-  padding: 15px;
 }
 
 .search-modal-text {
   padding: 15px;
 }
 
-.modalText p {
-  line-height: 180%;
-}
-
 .search-modal-text p {
   line-height: 180%;
-}
-
-.modalText button {
-  display: block;
-  width: 100%;
-  text-align: center;
 }
 
 .search-modal-text button {
@@ -176,8 +187,6 @@ code {
   width: 100%;
   text-align: center;
 }
-
-/* *************************************   Search Modal ***************************************************************** */
 
 .searchModalBackground {
   opacity: 0;

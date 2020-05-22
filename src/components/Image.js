@@ -5,6 +5,10 @@ const Img = styled.img`
   width: 100%;
   height: auto;
   ${"" /* object-fit: cover; */}
+  cursor: pointer;
+  &:hover {
+    filter: brightness(85%);
+  }
 `
 
 export const Image = (props) => {
