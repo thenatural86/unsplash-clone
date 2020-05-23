@@ -93,7 +93,7 @@ code {
   justify-content: center;
   margin: 10px;
   padding: 50px auto;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin-bottom: 1rem;
   border: 3px solid orange;
 
@@ -214,6 +214,12 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+
+.like-button {
+
+  background-color: red;
 }
 
 @media (max-width: 500px) {

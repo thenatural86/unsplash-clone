@@ -19,12 +19,19 @@ export const ImageList = () => {
   const [images, setImages] = useState([])
   const [modal, setModal] = useState(false)
   const [image, setImage] = useState({})
+  const [icons, setIcons] = useState(false)
 
   const toggleModalState = (image) => {
     setModal(!modal)
     setImage(image)
-    // console.log("toggling modal state", image, modal)
   }
+
+  const toggleHoverState = (image) => {
+    setIcons(!icons)
+    // console.log(image)
+  }
+  // console.log(icons)
+
   useEffect(() => {
     fetchImages()
   }, [])
@@ -36,7 +43,6 @@ export const ImageList = () => {
       .get(`${apiRoot}/photos/?client_id=${accessKey}&per_page=30`)
       .then((res) => setImages([...images, ...res.data]))
   }
-  // console.log(images)
   if (images === null) {
     return <div>loading</div>
   }
@@ -59,11 +65,15 @@ export const ImageList = () => {
         <WrapperImage>
           {images.map((image) => {
             return (
-              <Image
-                key={image.id}
-                url={image}
-                toggleModalState={toggleModalState}
-              />
+              <div>
+                <Image
+                  key={image.id}
+                  url={image}
+                  icons={icons}
+                  toggleModalState={toggleModalState}
+                  toggleHoverState={toggleHoverState}
+                />
+              </div>
             )
           })}
         </WrapperImage>
