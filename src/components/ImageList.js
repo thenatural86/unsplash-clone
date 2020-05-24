@@ -17,8 +17,8 @@ const WrapperImage = styled.div`
 
 export const ImageList = () => {
   const [images, setImages] = useState([])
-  const [modal, setModal] = useState(false)
   const [image, setImage] = useState({})
+  const [modal, setModal] = useState(false)
   const [icons, setIcons] = useState(false)
 
   const toggleModalState = (image) => {
@@ -26,12 +26,15 @@ export const ImageList = () => {
     setImage(image)
   }
 
-  const toggleHoverState = (image) => {
-    setIcons(!icons)
-    // console.log(image)
-  }
-  // console.log(icons)
+  const toggleHoverState = (photo) => {
+    // filter through the images array, if the id of the photo being passed into the function matches an image from the images array toggle the icons state of that image
+    console.log(photo.url.id)
+    let image = images.filter((image) => image.id === photo.url.id)
+    console.log(image[0].id)
+    // if photo.url.id === image[0].id, toggle the icon state for that photo object... photo.icons === true
 
+    // setIcons(image)
+  }
   useEffect(() => {
     fetchImages()
   }, [])
@@ -65,13 +68,12 @@ export const ImageList = () => {
         <WrapperImage>
           {images.map((image) => {
             return (
-              <div>
+              <div key={image.id}>
                 <Image
-                  key={image.id}
                   url={image}
                   icons={icons}
                   toggleModalState={toggleModalState}
-                  toggleHoverState={toggleHoverState}
+                  toggleHoverState={(image) => toggleHoverState(image)}
                 />
               </div>
             )
