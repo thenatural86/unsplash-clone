@@ -5,16 +5,6 @@ import { Loader } from "./Loader"
 import axios from "axios"
 import Modal from "./Modal"
 
-import styled from "styled-components"
-
-const WrapperImage = styled.div`
-  max-width: 80rem;
-  margin: 2rem auto;
-  line-height: 4rem;
-  column-count: 4;
-  column-gap: 1rem;
-`
-
 export const ImageList = () => {
   const [images, setImages] = useState([])
   const [image, setImage] = useState({})
@@ -40,7 +30,7 @@ export const ImageList = () => {
     return <div>loading</div>
   }
   return (
-    <div>
+    <div className="image-container">
       <div className={`modalBackground modalShowing-${modal}`}>
         <Modal
           toggleModalState={toggleModalState}
@@ -49,13 +39,12 @@ export const ImageList = () => {
         />
       </div>
       <InfiniteScroll
-        className="scroll-component"
         dataLength={images.length}
         next={() => fetchImages()}
         hasMore={true}
         loader={<Loader />}
       >
-        <WrapperImage>
+        <div className="image-list">
           {images.map((image) => {
             return (
               <div key={image.id}>
@@ -63,7 +52,7 @@ export const ImageList = () => {
               </div>
             )
           })}
-        </WrapperImage>
+        </div>
       </InfiniteScroll>
     </div>
   )

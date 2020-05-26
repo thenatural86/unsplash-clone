@@ -29,13 +29,10 @@ code {
 .navbar {
   background: #fff;
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: flex-start; */
   justify-content: space-around;
   font-family: "Quicksand", sans-serif;
   align-items: center;
   padding: 10px 0;
-  /* margin: auto 2px; */
   position: fixed;
   z-index: 51;
   width: 90rem;
@@ -45,7 +42,6 @@ code {
   width: 70rem;
   height: 4em;
   border-radius: 20px;
-  /* margin-left: 1rem; */
 }
 
 /* ***********************************************************    Banner   ********************************************************************** */
@@ -65,7 +61,7 @@ code {
 .modalBackground {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
+  transition: 0.6s ease-in-out;
   position: absolute;
   left: 0;
   right: 0;
@@ -83,6 +79,7 @@ code {
   width: 75rem;
   height: 100%;
   overflow: scroll;
+  transition: 0.9s ease-in-out;
 }
 
 .modalInner img {
@@ -96,7 +93,6 @@ code {
   /* margin-top: 1rem; */
   margin-bottom: 1rem;
   border: 3px solid orange;
-
 }
 
 .modalImage {
@@ -137,16 +133,13 @@ code {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease-in-out;
-  /* position: absolute; */
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   background: rgba(19, 18, 18, 0.7);
   display: flex;
-  /* z-index: 51; */
   border: 5px solid palegreen;
-  /* background-color: peachpuff; */
 }
 
 .search-modal-inner {
@@ -216,28 +209,50 @@ code {
   justify-content: center;
 }
 
+/* *********************   Images ***************************** */
+
+.image-container {
+  border: 3px solid red;
+}
+
+.image-list {
+  max-width: 80rem;
+  margin: 2rem auto;
+  line-height: 4rem;
+  column-count: 3;
+  column-gap: 1rem;
+  border: 3px solid blue;
+}
+
+.image {
+  border: 1px solid black;
+  position: relative;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* *******************  Icons *************************** */
 .image-icons {
   z-index: 2;
   position: absolute;
+  background-color: lemonchiffon;
 }
 
 .like-button {
-  position: relative;
-  left: 16rem;
+  /* background-color: crimson; */
 }
 
-.bottom-icons {
-  display: flex;
-  /* top: 10%; */
-  background-color: paleturquoise;
+.user-info-button {
+  /* background-color: darkcyan; */
 }
 
 .download-button {
   /* position: relative; */
-}
-
-.user-info-button {
-  /* background-color: palegoldenrod; */
+  /* left: 10rem; */
+  /* padding-left: 100%; */
+  /* background-color: palevioletred; */
+  /* border: 1px solid blue; */
 }
 
 @media (max-width: 500px) {
