@@ -20,14 +20,16 @@ export const Image = (props) => {
           <div className="like-button">
             <button>Like</button>
           </div>
-          <div className="bottom-icons">
-            <div className="user-info-button">
-              <img src={props.url.user.profile_image.small} alt="" />
-              {props.url.user.username}
-            </div>
-            <div className="download-button">
-              <button>DownLoad</button>
-            </div>
+          <div className="user-info-pic">
+            <img
+              style={{ borderRadius: "30px" }}
+              src={props.url.user.profile_image.small}
+              alt=""
+            />
+          </div>
+          <div className="user-info-name">{props.url.user.username}</div>
+          <div className="download-button">
+            <button>DownLoad</button>
           </div>
         </div>
       ) : null}
