@@ -216,10 +216,28 @@ code {
   justify-content: center;
 }
 
+.image-icons {
+  z-index: 2;
+  position: absolute;
+}
 
 .like-button {
+  position: relative;
+  left: 16rem;
+}
 
-  background-color: red;
+.bottom-icons {
+  display: flex;
+  /* top: 10%; */
+  background-color: paleturquoise;
+}
+
+.download-button {
+  /* position: relative; */
+}
+
+.user-info-button {
+  /* background-color: palegoldenrod; */
 }
 
 @media (max-width: 500px) {

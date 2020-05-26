@@ -13,7 +13,7 @@ function Modal(props) {
       >
         <div className="modalInner">
           <div>
-            <img src={props.image.user.profile_image.small} />
+            <img src={props.image.user.profile_image.small} alt="" />
           </div>
           <div>{props.image.user.name}</div>
           <div className="modalImage">
