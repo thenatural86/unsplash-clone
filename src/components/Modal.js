@@ -11,16 +11,28 @@ function Modal(props) {
         onClick={props.toggleModalState}
         className={`modalBackground modalShowing-${props.modal}`}
       >
-        <div className="modalInner">
-          <div>
-            <img src={props.image.user.profile_image.small} alt="" />
+        <div className="modal-page">
+          <div className="modal-user">
+            <div className="modal-user-image">
+              <img
+                style={{ borderRadius: "15px" }}
+                src={props.image.user.profile_image.small}
+                alt=""
+              />
+            </div>
+            <div className="modal-user-name">{props.image.user.name}</div>
           </div>
-          <div>{props.image.user.name}</div>
-          <div className="modalImage">
+          <div className="modal-like-button">
+            <button>Like</button>
+          </div>
+          <div className="modal-download-button">
+            <button>Download</button>
+          </div>
+          <div className="modal-image-container">
             <img src={props.image.urls.regular} alt="street" />
           </div>
           <div className="modal-description">
-            <h2>{props.image.alt_description}</h2>
+            <h5>{props.image.alt_description}</h5>
             <p></p>
           </div>
         </div>

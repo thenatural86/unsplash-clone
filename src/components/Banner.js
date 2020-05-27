@@ -16,7 +16,7 @@ const Header = styled.div`
 const H1 = styled.h1`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
-  z-index: 50;
+  z-index: 4;
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -27,7 +27,7 @@ const H1 = styled.h1`
 const H3 = styled.h3`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
-  z-index: 50;
+  z-index: 4;
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -38,7 +38,7 @@ const H3 = styled.h3`
 const H32 = styled.h3`
   font-family: "Quicksand", sans-serif;
   margin-bottom: 1em;
-  z-index: 50;
+  z-index: 4;
   position: absolute;
   margin: 0 auto;
   left: 0;
@@ -48,7 +48,7 @@ const H32 = styled.h3`
 `
 const Input = styled.input`
   margin-bottom: 1em;
-  z-index: 49;
+  z-index: 4;
   position: absolute;
   margin: 0 auto;
   left: 0;
