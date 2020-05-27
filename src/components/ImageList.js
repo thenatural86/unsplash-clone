@@ -13,6 +13,7 @@ export const ImageList = () => {
   const toggleModalState = (image) => {
     setModal(!modal)
     setImage(image)
+    console.log(image)
   }
 
   useEffect(() => {

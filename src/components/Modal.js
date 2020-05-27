@@ -32,8 +32,7 @@ function Modal(props) {
             <img src={props.image.urls.regular} alt="street" />
           </div>
           <div className="modal-description">
-            <h5>{props.image.alt_description}</h5>
-            <p></p>
+            <p>{props.image.alt_description}</p>
           </div>
         </div>
       </div>

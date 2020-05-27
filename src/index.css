@@ -72,8 +72,7 @@ code {
 }
 
 /* *******************  Icons *************************** */
-.image-icons {
-}
+.image-icons {}
 
 .like-button {
   z-index: 2;
@@ -188,8 +187,8 @@ code {
 }
 
 .modal-description {
-  padding: 15px;
-  border: 2px solid blueviolet;
+  /* padding: 15px; */
+  /* border: 2px solid blueviolet; */
 }
 
 .modal-text p {
