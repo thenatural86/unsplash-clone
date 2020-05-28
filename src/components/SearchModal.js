@@ -1,14 +1,22 @@
 import React from "react"
+import { Image } from "./Image"
 
 function SearchModal(props) {
-  console.log(props.image.urls.small)
+  console.log(props)
   return (
-    <div className="search-modal">
+    <div className="search-modal" onClick={props.toggleModalState}>
       <div
-        onClick={props.toggleModalState}
         className={`search-modal-background search-modal-showing-${props.modal}`}
       >
-        <img src={props.image.urls.small} alt="street" />
+        <div className="search-modal-image-container">
+          {props.images.map((image) => {
+            return (
+              <div className="search-modal-image">
+                <Image url={image} toggleModalState={props.toggleModalState} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -16,19 +24,9 @@ function SearchModal(props) {
 
 export default SearchModal
 
-// <div>
-//   <div
-//
-//     className=
+// <div >
+
 //   >
-//     <div className="search-modal-inner">
-//       <div className="search-modal-images">
-//
-//       </div>
-//       <div className="search-modal-text">
-//         {/* <h2>Modal header</h2> */}
-//         <p></p>
-//       </div>
-//     </div>
+//     <img src={props.image.urls.small} alt="street" />
 //   </div>
 // </div>

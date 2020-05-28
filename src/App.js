@@ -35,18 +35,15 @@ function App() {
       <NavBar handleSubmit={handleSubmit} />
       <Banner />
       {loading && null}
-      {!loading &&
-        results.map((image) => {
-          return (
-            <SearchModal
-              key={image.id}
-              toggleModalState={toggleModalState}
-              modal={modal}
-              image={image}
-              searchTerm={searchTerm}
-            />
-          )
-        })}
+      {!loading && (
+        <SearchModal
+          // key={image.id}
+          toggleModalState={toggleModalState}
+          modal={modal}
+          images={results}
+          searchTerm={searchTerm}
+        />
+      )}
       <ImageList />
     </div>
   )
