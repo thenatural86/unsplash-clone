@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import black from "../images/black.png"
+import { useHistory } from "react-router-dom"
 
 export const NavBar = (props) => {
-  // console.log(props)
+  console.log(props)
   const [searchTerm, setSearchTerm] = useState("")
+  const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // console.log("1st submit")
     props.handleSubmit(searchTerm)
     setSearchTerm("")
+    history.push("/search")
   }
 
   return (
