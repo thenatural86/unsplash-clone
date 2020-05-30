@@ -9,8 +9,12 @@ import {
   useHistory,
 } from "react-router-dom"
 import SearchPage from "./components/SearchPage"
+import { NavBar } from "./components/NavBar"
 
 export const App = () => {
+  const [image, setImage] = useState({})
+  const [modal, setModal] = useState(false)
+
   const [results, setResults] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
   const [clientId, setClientId] = useState(
@@ -19,19 +23,24 @@ export const App = () => {
   const history = useHistory()
 
   const handleSubmit = (searchTerm) => {
-    const url = `https://api.unsplash.com/search/photos?page=10&query=${searchTerm}&client_id=${clientId}`
+    const url = `https://api.unsplash.com/search/photos?per_page=30&query=${searchTerm}&client_id=${clientId}`
     axios.get(url).then((resp) => {
       setResults(resp.data.results)
       setClientId()
     })
     setSearchTerm(searchTerm)
-    // console.log(history)
-    // history.push("/search")
   }
+
+  // const toggleModalState = (image) => {
+  //   console.log("oy! over here!", image)
+  //   setModal(!modal)
+  //   setImage(image)
+  // }
 
   return (
     <div>
       <Router>
+        <NavBar handleSubmit={handleSubmit} />
         <Switch>
           <Route
             exact
@@ -49,6 +58,9 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 images={results}
                 searchTerm={searchTerm}
+                // toggleModalState={toggleModalState}
+                modal={modal}
+                image={image}
               />
             )}
           />

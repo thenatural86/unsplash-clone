@@ -1,30 +1,36 @@
-import React from "react"
+import React, { useState } from "react"
 import { Image } from "./Image"
+import Modal from "./Modal"
 
 function SearchPage(props) {
   console.log(props)
-  // const { searchTerm } = useParams()
-  // console.log(searchTerm)
+  const [image, setImage] = useState({})
+  const [modal, setModal] = useState(false)
+
+  const toggleModalState = (image) => {
+    setModal(!modal)
+    setImage(image)
+    console.log(image)
+  }
 
   return (
-    <div
-      className="search-modal"
-      // onClick={props.toggleModalState}
-    >
-      search
-      {/* <div
-        className={`search-modal-background search-modal-showing-${props.modal}`}
-      > */}
-      <div className="search-modal-image-container">
+    <div className="search-page-container">
+      <div className={`modalBackground modalShowing-${modal}`}>
+        <Modal
+          toggleModalState={toggleModalState}
+          modal={modal}
+          image={image}
+        />
+      </div>
+      <div className="search-page-image-container">
         {props.images.map((image) => {
           return (
-            <div className="search-modal-image">
-              <Image url={image} toggleModalState={props.toggleModalState} />
+            <div className="search-page-image">
+              <Image url={image} toggleModalState={toggleModalState} />
             </div>
           )
         })}
       </div>
-      {/* </div> */}
     </div>
   )
 }

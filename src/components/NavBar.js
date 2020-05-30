@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import black from "../images/black.png"
-import { useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 export const NavBar = (props) => {
   console.log(props)
@@ -16,7 +16,13 @@ export const NavBar = (props) => {
 
   return (
     <div className="navbar">
-      <img src={black} alt="black lightning 50/50" style={{ height: "2rem" }} />
+      <Link to="/">
+        <img
+          src={black}
+          alt="black lightning 50/50"
+          style={{ height: "2rem" }}
+        />
+      </Link>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -25,7 +31,9 @@ export const NavBar = (props) => {
           placeholder="Search free hi-resolution photos"
         />
       </form>
-      <p>Home</p>
+      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+        <p>Home</p>
+      </Link>
       <p>My Lightning</p>
       <p>Login</p>
     </div>

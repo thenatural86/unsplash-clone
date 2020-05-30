@@ -21,9 +21,7 @@ code {
 }
 
 /* ************************************************************************************************************************************************/
-.App {
-  /* background: rgb(245, 242, 219); */
-}
+.App {}
 
 /* *****************************************************************NavBar*********************************************************************** */
 .navbar {
@@ -48,9 +46,7 @@ code {
 
 /* *********************   Images ***************************** */
 
-.image-container {
-  /* border: 3px solid red; */
-}
+.image-container {}
 
 .image-list {
   max-width: 80rem;
@@ -189,10 +185,7 @@ code {
   padding: 50px auto;
 }
 
-.modal-description {
-  /* padding: 15px; */
-  /* border: 2px solid blueviolet; */
-}
+.modal-description {}
 
 .modal-text p {
   line-height: 180%;
@@ -204,111 +197,31 @@ code {
   text-align: center;
 }
 
-/* *************************************************************   Search Modal ***************************************************************** */
-.search-modal {
+/* *************************************************************   Search Page***************************************************************** */
+.search-page-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
-  top: 8%;
-  z-index: 51;
-  border: 2px solid tomato;
+  padding-top: 4rem;
 }
 
-.search-modal-background {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
-  /* left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; */
-  /* background: rgba(19, 18, 18, 0.7); */
-  display: flex;
-  /* border: 5px solid palegreen; */
-  width: 90rem;
-
-}
-
-.search-modal-image-container {
-  /* border: 2px solid mediumorchid; */
+.search-page-image-container {
   max-width: 80rem;
   margin: 2rem auto;
   line-height: 4rem;
   column-count: 3;
   column-gap: 1rem;
+  margin-top: 15px;
+
 }
 
-.search-modal-image {
-  /* border: 3px solid blue; */
-}
-
-/* .search-modal-inner {
-  background-color: #fff;
-  border-radius: 5px;
-  margin: auto;
-  z-index: 51;
-  width: 80rem;
-  height: 60rem;
-  display: flex;
-}
-
-.search-modal-inner img {
-  max-width: 20%;
-  max-height: 70%;
-  object-fit: contain;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 50px auto;
-} */
 
 .search-modal-showing-true {
   opacity: 1;
   pointer-events: visible;
 }
 
-.search-modal-text {
-  padding: 15px;
-}
-
-.search-modal-text p {
-  line-height: 180%;
-}
-
-.search-modal-text button {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.searchModalBackground {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(175, 25, 25, 0.7);
-  display: flex;
-  z-index: 2;
-}
-
-.searchModalInner {
-  background-color: white;
-  border: 2px solid red;
-  border-radius: 5px;
-  width: 85%;
-  height: 92%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 @media (max-width: 500px) {
   .modalImage {
