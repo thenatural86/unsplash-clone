@@ -25,7 +25,7 @@ function SearchPage(props) {
       <div className="search-page-image-container">
         {props.images.map((image) => {
           return (
-            <div className="search-page-image">
+            <div className="search-page-image" key={image.id}>
               <Image url={image} toggleModalState={toggleModalState} />
             </div>
           )

@@ -3,7 +3,6 @@ import black from "../images/black.png"
 import { Link, useHistory } from "react-router-dom"
 
 export const NavBar = (props) => {
-  console.log(props)
   const [searchTerm, setSearchTerm] = useState("")
   const history = useHistory()
 

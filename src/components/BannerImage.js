@@ -7,7 +7,6 @@ const Img = styled.img`
   object-fit: cover;
 `
 export const BannerImage = (props) => {
-  // console.log(props.image.urls.small)
   const image = props.image.urls.regular
   return (
     <div>

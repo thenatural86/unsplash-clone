@@ -20,7 +20,6 @@ export const App = () => {
   const [clientId, setClientId] = useState(
     "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
   )
-  const history = useHistory()
 
   const handleSubmit = (searchTerm) => {
     const url = `https://api.unsplash.com/search/photos?per_page=30&query=${searchTerm}&client_id=${clientId}`
@@ -29,13 +28,8 @@ export const App = () => {
       setClientId()
     })
     setSearchTerm(searchTerm)
+    console.log(searchTerm)
   }
-
-  // const toggleModalState = (image) => {
-  //   console.log("oy! over here!", image)
-  //   setModal(!modal)
-  //   setImage(image)
-  // }
 
   return (
     <div>
@@ -58,7 +52,6 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 images={results}
                 searchTerm={searchTerm}
-                // toggleModalState={toggleModalState}
                 modal={modal}
                 image={image}
               />

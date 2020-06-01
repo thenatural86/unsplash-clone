@@ -7,7 +7,6 @@ export const Image = (props) => {
 
   const toggleHoverState = () => {
     setIcons(!icons)
-    // console.log(icons)
   }
   return (
     <div

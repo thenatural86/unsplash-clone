@@ -4,7 +4,6 @@ import axios from "axios"
 import { BannerImage } from "./BannerImage"
 
 const Header = styled.div`
-  ${"" /* max-width: 70rem; */}
   width: 100%;
   height: 20rem;
   margin: 2rem auto;
