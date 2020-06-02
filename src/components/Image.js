@@ -16,9 +16,7 @@ export const Image = (props) => {
     >
       {icons ? (
         <div className="image-icons">
-          <div className="like-button">
-            <button>Like</button>
-          </div>
+          <i className="fas fa-heart-square "></i>
           <div className="user-info-pic">
             <img
               style={{ borderRadius: "30px" }}
@@ -27,9 +25,7 @@ export const Image = (props) => {
             />
           </div>
           <div className="user-info-name">{props.url.user.username}</div>
-          <div className="download-button">
-            <button>DownLoad</button>
-          </div>
+          <i class="fad fa-arrow-square-down"></i>
         </div>
       ) : null}
       <img

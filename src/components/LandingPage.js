@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import { ImageList } from "./ImageList"
-import { NavBar } from "./NavBar"
 import { Banner } from "./Banner"
 
 // import SearchPage from "./SearchPage"

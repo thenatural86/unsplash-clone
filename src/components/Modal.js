@@ -22,10 +22,10 @@ function Modal(props) {
             <div className="modal-user-name">{props.image.user.name}</div>
           </div>
           <div className="modal-like-button">
-            <button>Like</button>
+            <i className="fas fa-heart-square "></i>
           </div>
           <div className="modal-download-button">
-            <button>Download</button>
+            <i class="fad fa-arrow-square-down"></i>
           </div>
           <div className="modal-image-container">
             <img src={props.image.urls.regular} alt="street" />

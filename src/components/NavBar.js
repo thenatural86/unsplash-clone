@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import black from "../images/black.png"
 import { Link, useHistory } from "react-router-dom"
+import GoogleLogin from "react-google-login"
 
 export const NavBar = (props) => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -11,6 +12,11 @@ export const NavBar = (props) => {
     props.handleSubmit(searchTerm)
     setSearchTerm("")
     history.push("/search")
+  }
+
+  const responseGoogle = (response) => {
+    console.log("Response:", response)
+    console.log("Profile:", response.profileObj)
   }
 
   return (
@@ -34,7 +40,16 @@ export const NavBar = (props) => {
         <p>Home</p>
       </Link>
       <p>My Lightning</p>
-      <p>Login</p>
+      <p>
+        <GoogleLogin
+          clientId="129970575780-3l324bbqjvrnmq7nhq7clho2grfmi6ut.apps.googleusercontent.com"
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={"single_host_origin"}
+        />
+      </p>
+      {/* <p>Login</p> */}
     </div>
   )
 }

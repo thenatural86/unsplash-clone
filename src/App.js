@@ -2,19 +2,11 @@ import React, { useState } from "react"
 import LandingPage from "./components/LandingPage"
 import axios from "axios"
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import SearchPage from "./components/SearchPage"
 import { NavBar } from "./components/NavBar"
 
 export const App = () => {
-  const [image, setImage] = useState({})
-  const [modal, setModal] = useState(false)
-
   const [results, setResults] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
   const [clientId, setClientId] = useState(
@@ -52,8 +44,6 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 images={results}
                 searchTerm={searchTerm}
-                modal={modal}
-                image={image}
               />
             )}
           />
