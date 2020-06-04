@@ -39,7 +39,9 @@ export const NavBar = (props) => {
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>
         <p>Home</p>
       </Link>
-      <p>My Lightning</p>
+      <Link to="/">
+        <p>My Lightning</p>
+      </Link>
       <p>
         <GoogleLogin
           clientId="129970575780-3l324bbqjvrnmq7nhq7clho2grfmi6ut.apps.googleusercontent.com"

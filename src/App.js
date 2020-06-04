@@ -5,6 +5,7 @@ import axios from "axios"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import SearchPage from "./components/SearchPage"
 import { NavBar } from "./components/NavBar"
+import { Favorites } from "./components/Favorites"
 
 export const App = () => {
   const [results, setResults] = useState([])
@@ -47,6 +48,7 @@ export const App = () => {
               />
             )}
           />
+          <Route exact path="/favorites" component={Favorites} />
         </Switch>
       </Router>
     </div>
