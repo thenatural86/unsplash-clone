@@ -326,13 +326,10 @@ code {
 
 }
 
-
 .search-modal-showing-true {
   opacity: 1;
   pointer-events: visible;
 }
-
-
 
 /* ********************************  Favorites Page **************************** */
 .favorites-page {
@@ -340,30 +337,23 @@ code {
 }
 
 .favorites-heading-container {
-  /* background-color: turquoise; */
   padding-top: 4rem;
   margin: auto;
   width: 20%;
 }
 
 .favorites-title {
-  /* background-color: darkkhaki; */
   margin: auto;
   width: 70%;
 }
 
 .favorites-logo {
-  /* background-color: gold; */
   padding-top: .3rem;
   margin: auto;
   width: 30%;
 }
 
 .favorites-images-container {
-  /* background-color: hotpink;xs */
-  /* margin: auto;
-  height: 10rem;
-  width: 50%; */
   max-width: 80rem;
   margin: 2rem auto;
   line-height: 4rem;
@@ -376,11 +366,6 @@ code {
   padding-top: 4rem;
   width: 40%;
 }
-
-
-
-
-
 
 @media (max-width: 500px) {
   .modalImage {
