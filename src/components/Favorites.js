@@ -26,7 +26,12 @@ export const Favorites = (props) => {
           <div className="favorites-images-container">
             {props.favorites.map((favorite) => {
               return (
-                <Image url={favorite.image} addRemoveFav={props.addRemoveFav} />
+                <div key={favorite}>
+                  <Image
+                    url={favorite.image}
+                    addRemoveFav={props.addRemoveFav}
+                  />
+                </div>
               )
             })}
           </div>
