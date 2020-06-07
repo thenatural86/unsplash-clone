@@ -29,13 +29,6 @@ export const Favorites = (props) => {
             })}
           </div>
         )}
-
-        {/* {props.favorites.length === 0 ? <div>Empty</div> :
-      
-        {props.favorites.map((favorite) => {
-          return <Image url={favorite} />
-        })}
-      } */}
       </div>
     </div>
   )
