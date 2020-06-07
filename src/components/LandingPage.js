@@ -11,6 +11,7 @@ function LandingPage(props) {
         toggleLike={props.toggleLike}
         liked={props.liked}
         addToFav={props.addToFav}
+        addRemoveFav={props.addRemoveFav}
       />
     </div>
   )

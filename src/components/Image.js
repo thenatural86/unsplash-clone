@@ -26,6 +26,7 @@ export const Image = (props) => {
           <i
             className="fas fa-heart-square "
             onClick={() => props.addToFav(imageObj)}
+            onClick={() => props.addRemoveFav(imageObj)}
           ></i>
           <div className="user-info-pic">
             <img

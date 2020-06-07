@@ -3,7 +3,6 @@ import black from "../images/black.png"
 import { Image } from "./Image"
 
 export const Favorites = (props) => {
-  console.log(props.favorites)
   return (
     <div className="favorites-page">
       <div className="favorites-heading-container">
@@ -20,12 +19,15 @@ export const Favorites = (props) => {
       </div>
       <div className="favorites-images">
         {props.favorites.length === 0 ? (
-          <div>No Fav</div>
+          <div className="no-favorites">
+            <h1>Like A Picture and Ride the Lightning!</h1>
+          </div>
         ) : (
           <div className="favorites-images-container">
-            All my favorite pics!
             {props.favorites.map((favorite) => {
-              return <Image url={favorite.image} />
+              return (
+                <Image url={favorite.image} addRemoveFav={props.addRemoveFav} />
+              )
             })}
           </div>
         )}

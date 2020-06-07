@@ -30,12 +30,14 @@ export const App = () => {
     setLiked(!liked)
     setFavorites(image)
     console.log("from up top!", image)
-    // console.log(liked)
   }
 
   const addToFav = (image) => {
-    console.log("This object is one of my favs!", image)
     setFavorites([...favorites, { image }])
+  }
+
+  const removeFromFav = (image) => {
+    setFavorites(favorites.filter((favorite) => favorite.image.id !== image.id))
   }
 
   return (
@@ -52,7 +54,7 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 toggleLike={toggleLike}
                 liked={liked}
-                addToFav={addToFav}
+                addRemoveFav={addToFav}
               />
             )}
           />
@@ -78,8 +80,7 @@ export const App = () => {
                 toggleLike={toggleLike}
                 liked={liked}
                 favorites={favorites}
-
-                // searchTerm={searchTerm}
+                addRemoveFav={removeFromFav}
               />
             )}
           />
