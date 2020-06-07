@@ -1,13 +1,20 @@
 import React, { useState } from "react"
 
 export const Image = (props) => {
+  // console.log(props)
   const [icons, setIcons] = useState(false)
-
+  const [liked, setLiked] = useState(false)
   const imageObj = props.url
 
   const toggleHoverState = () => {
     setIcons(!icons)
   }
+
+  const toggleLike = (image) => {
+    setLiked(!liked)
+    console.log(image)
+  }
+
   return (
     <div
       className="image"
@@ -16,7 +23,10 @@ export const Image = (props) => {
     >
       {icons ? (
         <div className="image-icons">
-          <i className="fas fa-heart-square "></i>
+          <i
+            className="fas fa-heart-square "
+            onClick={() => props.addToFav(imageObj)}
+          ></i>
           <div className="user-info-pic">
             <img
               style={{ borderRadius: "30px" }}
@@ -25,7 +35,7 @@ export const Image = (props) => {
             />
           </div>
           <div className="user-info-name">{props.url.user.username}</div>
-          <i class="fad fa-arrow-square-down"></i>
+          <i className="fad fa-arrow-square-down"></i>
         </div>
       ) : null}
       <img

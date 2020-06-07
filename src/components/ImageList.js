@@ -5,7 +5,7 @@ import { Loader } from "./Loader"
 import axios from "axios"
 import Modal from "./Modal"
 
-export const ImageList = () => {
+export const ImageList = (props) => {
   const [images, setImages] = useState([])
   const [image, setImage] = useState({})
   const [modal, setModal] = useState(false)
@@ -49,7 +49,13 @@ export const ImageList = () => {
           {images.map((image) => {
             return (
               <div key={image.id}>
-                <Image url={image} toggleModalState={toggleModalState} />
+                <Image
+                  url={image}
+                  toggleModalState={toggleModalState}
+                  toggleLike={props.toggleLike}
+                  liked={props.liked}
+                  addToFav={props.addToFav}
+                />
               </div>
             )
           })}

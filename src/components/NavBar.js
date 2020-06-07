@@ -39,7 +39,7 @@ export const NavBar = (props) => {
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>
         <p>Home</p>
       </Link>
-      <Link to="/favorites">
+      <Link to="/favorites" style={{ textDecoration: "none", color: "black" }}>
         <p>My Lightning</p>
       </Link>
       <p>

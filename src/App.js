@@ -13,6 +13,8 @@ export const App = () => {
   const [clientId, setClientId] = useState(
     "ByiIqQV5gReo8trB-h5T8VGRQW6EvhmyQW2EH-tLbys"
   )
+  const [liked, setLiked] = useState(false)
+  const [favorites, setFavorites] = useState([])
 
   const handleSubmit = (searchTerm) => {
     const url = `https://api.unsplash.com/search/photos?per_page=30&query=${searchTerm}&client_id=${clientId}`
@@ -24,6 +26,18 @@ export const App = () => {
     console.log(searchTerm)
   }
 
+  const toggleLike = (image) => {
+    setLiked(!liked)
+    setFavorites(image)
+    console.log("from up top!", image)
+    // console.log(liked)
+  }
+
+  const addToFav = (image) => {
+    console.log("This object is one of my favs!", image)
+    setFavorites([...favorites, { image }])
+  }
+
   return (
     <div>
       <Router>
@@ -33,7 +47,13 @@ export const App = () => {
             exact
             path="/"
             render={(props) => (
-              <LandingPage {...props} handleSubmit={handleSubmit} />
+              <LandingPage
+                {...props}
+                handleSubmit={handleSubmit}
+                toggleLike={toggleLike}
+                liked={liked}
+                addToFav={addToFav}
+              />
             )}
           />
           <Route
@@ -45,10 +65,24 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 images={results}
                 searchTerm={searchTerm}
+                liked={liked}
               />
             )}
           />
-          <Route exact path="/favorites" component={Favorites} />
+          <Route
+            exact
+            path="/favorites"
+            render={(props) => (
+              <Favorites
+                {...props}
+                toggleLike={toggleLike}
+                liked={liked}
+                favorites={favorites}
+
+                // searchTerm={searchTerm}
+              />
+            )}
+          />
         </Switch>
       </Router>
     </div>

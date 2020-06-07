@@ -20,10 +20,7 @@ code {
     monospace;
 }
 
-/* ************************************************************************************************************************************************/
-.App {}
-
-/* *****************************************************************NavBar*********************************************************************** */
+/* ******************************NavBar************************ */
 .navbar {
   background: #fff;
   display: flex;
@@ -48,11 +45,7 @@ code {
   outline: none;
 }
 
-/* ***********************************************************    Banner   ********************************************************************** */
-
-.banner-container {
-  /* border: 2px solid red; */
-}
+/* *******************************   Banner   ********************/
 
 .banner-header {
   width: 100%;
@@ -61,7 +54,6 @@ code {
   text-align: center;
   position: relative;
   display: inline-block;
-  /* border: 2px solid blue; */
 }
 
 .banner-header h1 {
@@ -114,15 +106,12 @@ code {
 }
 
 .banner-image {
-  /* border: 3px solid yellow; */
   height: 32rem;
   width: 100%;
   object-fit: cover;
 }
 
 /* *********************   Images ***************************** */
-
-.image-container {}
 
 .image-list {
   max-width: 80rem;
@@ -144,8 +133,6 @@ code {
 }
 
 /* *******************  Icons *************************** */
-.image-icons {}
-
 .fa-heart-square {
   z-index: 2;
   position: absolute;
@@ -204,7 +191,6 @@ code {
   right: 10%;
   height: 2rem;
   width: 2rem;
-  /* background: rgba(255, 255, 255, .85); */
   border: 1px solid transparent;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
   transition: all .2s ease-in-out;
@@ -224,7 +210,6 @@ code {
 }
 
 /* *********************************************************Modal*********************************************************************************** */
-
 .modal {
   text-align: center;
   justify-content: center;
@@ -234,7 +219,6 @@ code {
   top: 8%;
   z-index: 4;
   background: rgba(0, 0, 0, 0.7);
-
 }
 
 .modalBackground {
@@ -312,8 +296,6 @@ code {
 
 }
 
-.modal-description {}
-
 .modal-text p {
   line-height: 180%;
 }
@@ -348,6 +330,44 @@ code {
   opacity: 1;
   pointer-events: visible;
 }
+
+
+
+/* ********************************  Favorites Page **************************** */
+.favorites-page {
+  /* background-color: thistle; */
+}
+
+.favorites-heading-container {
+  /* background-color: turquoise; */
+  padding-top: 4rem;
+  margin: auto;
+  width: 20%;
+}
+
+.favorites-title {
+  /* background-color: darkkhaki; */
+  margin: auto;
+  width: 70%;
+}
+
+.favorites-logo {
+  /* background-color: gold; */
+  padding-top: .3rem;
+  margin: auto;
+  width: 30%;
+}
+
+.favorites-images-container {
+  background-color: hotpink;
+  margin: auto;
+  height: 10rem;
+  width: 50%;
+}
+
+
+
+
 
 
 @media (max-width: 500px) {
