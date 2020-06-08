@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import LandingPage from "./components/LandingPage"
 import axios from "axios"
 
@@ -16,6 +16,10 @@ export const App = () => {
   const [liked, setLiked] = useState(false)
   const [favorites, setFavorites] = useState([])
 
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+  }, [favorites])
+
   const handleSubmit = (searchTerm) => {
     const url = `https://api.unsplash.com/search/photos?per_page=30&query=${searchTerm}&client_id=${clientId}`
     axios.get(url).then((resp) => {
@@ -23,13 +27,11 @@ export const App = () => {
       setClientId()
     })
     setSearchTerm(searchTerm)
-    console.log(searchTerm)
   }
 
   const toggleLike = (image) => {
     setLiked(!liked)
     setFavorites(image)
-    console.log("from up top!", image)
   }
 
   const addToFav = (image) => {
