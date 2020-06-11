@@ -34,8 +34,14 @@ export const App = () => {
     setFavorites(image)
   }
 
+  const toggleModalState = (object) => {
+    console.log(object)
+  }
+
   const addToFav = (image) => {
-    setFavorites([...favorites, { image }])
+    if (![favorites].includes(image)) {
+      setFavorites([...favorites, { image }])
+    }
   }
 
   const removeFromFav = (image) => {
@@ -56,7 +62,7 @@ export const App = () => {
                 handleSubmit={handleSubmit}
                 toggleLike={toggleLike}
                 liked={liked}
-                addRemoveFav={addToFav}
+                favHandler={addToFav}
               />
             )}
           />
@@ -80,9 +86,10 @@ export const App = () => {
               <Favorites
                 {...props}
                 toggleLike={toggleLike}
+                toggleModalState={toggleModalState}
                 liked={liked}
                 favorites={favorites}
-                addRemoveFav={removeFromFav}
+                favHandler={removeFromFav}
               />
             )}
           />

@@ -3,15 +3,13 @@ import { ImageList } from "./ImageList"
 import { Banner } from "./Banner"
 
 function LandingPage(props) {
-  // console.log(props)
   return (
     <div className="App">
       <Banner />
       <ImageList
         toggleLike={props.toggleLike}
         liked={props.liked}
-        addToFav={props.addToFav}
-        addRemoveFav={props.addRemoveFav}
+        favHandler={props.favHandler}
       />
     </div>
   )

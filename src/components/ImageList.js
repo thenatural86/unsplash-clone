@@ -54,8 +54,7 @@ export const ImageList = (props) => {
                   toggleModalState={toggleModalState}
                   toggleLike={props.toggleLike}
                   liked={props.liked}
-                  addToFav={props.addToFav}
-                  addRemoveFav={props.addRemoveFav}
+                  favHandler={props.favHandler}
                 />
               </div>
             )

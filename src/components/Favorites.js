@@ -29,7 +29,8 @@ export const Favorites = (props) => {
                 <div key={favorite}>
                   <Image
                     url={favorite.image}
-                    addRemoveFav={props.addRemoveFav}
+                    favHandler={props.favHandler}
+                    toggleModalState={props.toggleModalState}
                   />
                 </div>
               )

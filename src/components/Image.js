@@ -11,7 +11,7 @@ export const Image = (props) => {
   }
 
   const toggleLike = (image) => {
-    // setLiked(!liked)
+    setLiked(!liked)
     console.log(image, liked)
   }
 
@@ -23,10 +23,17 @@ export const Image = (props) => {
     >
       {icons ? (
         <div className="image-icons">
-          <i
-            className="fas fa-heart-square "
-            onClick={() => props.addRemoveFav(imageObj)}
-          ></i>
+          <div onClick={toggleLike}>
+            {liked ? (
+              <i className="fad fa-heart-square"></i>
+            ) : (
+              <i
+                className="fas fa-heart-square "
+                onClick={() => props.favHandler(imageObj)}
+              ></i>
+            )}
+          </div>
+
           <div className="user-info-pic">
             <img
               style={{ borderRadius: "30px" }}
